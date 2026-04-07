@@ -18,6 +18,8 @@
 | **Сайт** | [o90434uc.beget.tech](http://o90434uc.beget.tech/) |
 | **Endpoint API** | `http://o90434uc.beget.tech/wp-json/events/v1/events` |
 | **API Key** | `my-secret-key-123` *(передавать в заголовке `x-api-key`)* |
+| **User-Agent** | `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36` |
+
 
 ---
 
@@ -37,10 +39,9 @@
 
 ## 📡 Примеры запросов
 
-### 🔍 GET — Получить список событий
-
 ```http
-GET http://o90434uc.beget.tech/wp-json/events/v1/events
+GET
+curl "http://o90434uc.beget.tech/wp-json/events/v1/events" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" -H "Content-Type: application/json" -H "Accept: application/json" -H "X-API-Key: my-secret-key-123"
 {
     "data": [
         {
@@ -71,9 +72,8 @@ GET http://o90434uc.beget.tech/wp-json/events/v1/events
     }
 }
 
-POST http://o90434uc.beget.tech/wp-json/events/v1/events
-Content-Type: application/json
-x-api-key: my-secret-key-123
+POST
+curl -X POST "http://o90434uc.beget.tech/wp-json/events/v1/events" -H "Content-Type: application/json" -H "x-api-key: my-secret-key-123" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" -d "{\"title\":\"Концерт джаза в парке\",\"place\":\"Центральный парк\",\"start_at\":\"2026-04-15 20:00\",\"end_at\":\"2026-04-15 21:00\",\"capacity\":3000,\"tags\":[\"джаз\",\"open-air\"],\"status\":\"draft\"}"
 Тело запроса:
 {
   "title": "Концерт джаза в парке",
@@ -84,7 +84,6 @@ x-api-key: my-secret-key-123
   "tags": ["джаз", "open-air"],
   "status": "draft"
 }
-
 Ответ:
 {
     "id": 96,
@@ -101,9 +100,8 @@ x-api-key: my-secret-key-123
     "change_number": 1
 }
 
-PUT http://o90434uc.beget.tech/wp-json/events/v1/events/96
-Content-Type: application/json
-x-api-key: my-secret-key-123
+PUT 
+curl -X PUT "http://o90434uc.beget.tech/wp-json/events/v1/events/96" -H "x-api-key: my-secret-key-123" -H "User-Agent: Mozilla/5.0" -H "Content-Type: application/json" -d "{\"capacity\":5000}"
 Тело запроса:
 {
   "capacity": 5000
@@ -124,8 +122,8 @@ x-api-key: my-secret-key-123
     "change_number": 2
 }
 
-DELETE http://o90434uc.beget.tech/wp-json/events/v1/events/96
-x-api-key: my-secret-key-123
+DELETE 
+curl -X DELETE "http://o90434uc.beget.tech/wp-json/events/v1/events/96" -H "x-api-key: my-secret-key-123" -H "User-Agent: Mozilla/5.0"
 Ответ:
 {
     "message": "Событие успешно удалено"
