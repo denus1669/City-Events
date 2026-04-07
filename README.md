@@ -17,7 +17,7 @@
 |--------|-------|
 | **Сайт** | [o90434uc.beget.tech](http://o90434uc.beget.tech/) |
 | **Endpoint API** | `http://o90434uc.beget.tech/wp-json/events/v1/events` |
-| **API Key** | `my-secret-key-123` *(передавать в заголовке `x-api-key`)* |
+| **API Key** | `my-secret-key-123` *(передавать в заголовке `X-API-Key`)* |
 | **User-Agent** | `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36` |
 
 
